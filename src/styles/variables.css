@@ -1,0 +1,12 @@
+:root {
+    --text-color: #fffde7;
+    --bg-color-1: #1b1a20;
+    --bg-color-2: #161620;
+    --bg-color-3: #3c2f88;
+
+    --padding-s: 10px;
+    --padding-m: 20px;
+    --padding-l: 30px;
+
+    --border-radius: 4px;
+}
