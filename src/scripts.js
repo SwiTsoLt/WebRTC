@@ -12,7 +12,7 @@ const mediaConfig = {
         width: 1280,
         height: 720
     },
-    audio: false
+    audio: true
 }
 
 const pc_clients = {}

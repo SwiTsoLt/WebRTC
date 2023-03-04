@@ -30,8 +30,15 @@ const server = http.createServer((req, res) => {
 
     if (req.url === "/") {
         filePath = path.join(__dirname, "src", "index.html")
+        res.setHeader('Content-Type', 'text/html')
     } else {
         filePath = path.join(__dirname, "src", req.url)
+
+        if (req.url.includes("css")) {
+            res.setHeader('Content-Type', 'text/css')
+        } else if (req.url.includes("js")) {
+            res.setHeader('Content-Type', 'text/javascript')
+        }
     }
 
     const fileExists = fs.existsSync(filePath)
@@ -49,8 +56,6 @@ const clients = {}
 const rooms = {}
 
 const wss = new ws.Server({ server })
-
-wss
 
 wss.on("connection", socket => {
     const id = uuid()
